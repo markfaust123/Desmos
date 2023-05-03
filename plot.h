@@ -25,9 +25,9 @@ public:
   ~Plot();
 
   // TODO: add member functions to set and modify plot data
-  void set_bounds(Bounds bounds);
-  void add_function(Function func);
-  void add_fill(Fill fill);
+  void set_bounds(Bounds &bounds);
+  void add_function(Function &func);
+  void add_fill(Fill &fill);
 };
 
 #endif // PLOT_H

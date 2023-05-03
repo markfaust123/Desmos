@@ -91,12 +91,19 @@ test9 : plot.o
 	compare -metric RMSE actual/example09.png expected/example09.png actual/example09_diff.png
 	echo $?
 
+testing : testing.o 
+	$(CXX) testing.o -o testing && ./testing
+
+testing.o : 
+	make depend
+	$(CXX) $(CXXFLAGS) testing.cpp -c
+
 plot : $(OBJS)
 	make depend
 	$(CXX) -o $@ $(OBJS) -lm -lz
 
 clean :
-	rm -f *.o plot
+	rm -f *.o plot testing
 
 depend :
 	$(CC) -M $(CFLAGS) $(C_SRCS) > depend.mak

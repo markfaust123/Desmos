@@ -18,4 +18,12 @@ Expr *ExprParser::parse(std::istream &in) {
   // such as a vector or deque. The call a recursive helper function
   // which parses the tokens and returns a pointer to an Expr object
   // repersenting the parsed expression.
+
+  std::deque<std::string> tokens;
+  std::string token;
+
+  while (in >> token) {
+    
+  }
+
 }
