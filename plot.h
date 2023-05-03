@@ -12,6 +12,9 @@
 class Plot {
 private:
   // TODO: add fields to represent plot bounds, functions, fills, etc.
+  Bounds bounds;
+  std::vector<Function> functions;
+  std::vector<Fill> fills;
 
   // value semantics are prohibited
   Plot(const Plot &);
@@ -22,6 +25,9 @@ public:
   ~Plot();
 
   // TODO: add member functions to set and modify plot data
+  void set_bounds(Bounds bounds);
+  void add_function(Function func);
+  void add_fill(Fill fill);
 };
 
 #endif // PLOT_H
